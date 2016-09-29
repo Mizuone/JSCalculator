@@ -1,0 +1,112 @@
+<!doctype>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JS Calculator</title>
+        <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/css/main.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    </head>
+    <body ng-app="JSCal">
+        <main ng-controller="MainController">
+            <div id="maincontainer" class="container">
+                <div id="topcolor">
+                    <div id="numberdisplay">
+                        <p> <span class="numsequence">{{ sequenceDisplay }}</span> <span class="totalnum">{{ totalnumber }}</span></p>
+                    </div>
+                </div>
+                <!--Row 1-->
+                <div class="row" id="row-one">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence('+')">+</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence('-')">-</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence('/')">&divide;</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence('*')">x</button>
+                    </div>
+                </div>
+                <!--Row 2-->
+                <div class="row" id="row-two">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence(7)">7</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence(8)">8</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence(9)">9</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button id="cebutton" ng-click="clearEntry()">CE</button>
+                    </div>
+                </div>
+                <!--Row 3-->
+                <div class="row" id="row-three">
+                    <div class="col-xs-2">
+                        <button ng-click="addToSequence(4)">4</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence(5)">5</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button ng-click="addToSequence(6)">6</button>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <button id="acbutton" ng-click="allClear()">AC</button>
+                    </div>
+                </div>
+                        
+                <button id="equalbutton" ng-click="addTotal('=')">=</button>
+                <div id="bottombuttons">
+                    <!--Row 4-->
+                    <div class="row" id="row-four">
+                        <div class="col-xs-3">
+                            <button ng-click="addToSequence(1)">1</button>
+                        </div>
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <button ng-click="addToSequence(2)">2</button>
+                        </div>
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <button ng-click="addToSequence(3)">3</button>
+                        </div>
+                    </div>
+                    <!--Row 5-->
+                    <div class="row" id="row-five">
+                        <div class="col-xs-1">
+                            <button id="zerobutton" ng-click="addToSequence(0)">0</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button ng-click="addToSequence('.')">.</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button ng-click="addToSequence('(')">(</button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button ng-click="addToSequence(')')">)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="personcontainer">
+                <h2 class="text-center">Created By<a href="https://www.linkedin.com/in/kyleorlinskideveloper"> Kyle Orlinski</a> <a href="https://mizuone.github.io/"><img src="http://res.cloudinary.com/dqk4hl3zh/image/upload/v1466524579/Logo_cke2ww.png" width="64" height="64"></a></h2>
+            </div>
+        </main>
+    <!-- Modules -->    
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/maincontrollers.js"></script>
+    </body>
+</html>
