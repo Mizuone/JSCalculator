@@ -1,5 +1,4 @@
 "use strict";
-var app = angular.module('JSCal', []);
 app.controller('MainController', ['$scope',
 	function($scope) {
         $scope.title = 'JS Calculator';
@@ -23,7 +22,6 @@ app.controller('MainController', ['$scope',
         }
         //adds a number to the array
         $scope.clearEntry = function() {
-            console.log($scope.numbersequence.length);
             $scope.numbersequence.pop();
             $scope.showSequence();
             if ($scope.numbersequence.length <= 0 ) {
